@@ -90,6 +90,13 @@ details.notes { font-size: 13px; color: var(--muted); margin: -4px 0 12px; }
 details.notes summary { cursor: pointer; }
 details.notes ol { padding-inline-start: 20px; margin: 6px 0 0; }
 details.notes[dir="rtl"] { font-family: Amiri, serif; font-size: 16px; }
+.seg + .seg { border-top: 1px dashed var(--line); padding-top: 12px; }
+.tafsir .part.ms { font-size: 16px; line-height: 1.7; }
+details.orig { margin: -2px 0 12px; }
+details.orig summary { cursor: pointer; font-size: 13px; color: var(--accent); font-weight: 600; }
+details.orig[open] summary { margin-bottom: 10px; }
+.gt { display: inline-block; font-size: 13px; font-weight: 600; text-decoration: none; margin: -4px 0 12px; }
+.ai-note { font-size: 11px; color: var(--muted); padding: 0 18px 12px; margin-top: -4px; }
 .more {
   display: block; width: 100%; border: 0; border-top: 1px solid var(--line);
   background: transparent; color: var(--accent); font: 600 14px Inter, sans-serif;

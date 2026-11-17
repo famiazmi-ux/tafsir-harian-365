@@ -22,13 +22,23 @@ async function getJson(url) {
   return r.json();
 }
 
+const gtUrl = (text, rtl) =>
+  `https://translate.google.com/?sl=${rtl ? "ar" : "en"}&tl=ms&op=translate&text=${encodeURIComponent(text)}`;
+
 function partHtml(p, rtl) {
   const dir = rtl ? ' dir="rtl" lang="ar"' : ' dir="ltr" lang="en"';
   const notes = p.footnotes?.length
     ? `<details class="notes"${dir}><summary>Nota kaki (${p.footnotes.length})</summary><ol>${p.footnotes
         .map((f) => `<li>${esc(f.text)}</li>`).join("")}</ol></details>`
     : "";
-  return `<p class="part"${dir}>${esc(p.text)}</p>${notes}`;
+  const original = `<p class="part"${dir}>${esc(p.text)}</p>${notes}`;
+  if (p.ms) {
+    // BM (terjemahan AI) dulu; teks asal boleh dibuka.
+    return `<div class="seg"><p class="part ms" lang="ms">${esc(p.ms)}</p>
+      <details class="orig"><summary>Lihat teks asal</summary>${original}</details></div>`;
+  }
+  return `<div class="seg">${original}
+    <a class="gt" href="${gtUrl(p.text, rtl)}" target="_blank" rel="noopener">Terjemah ke BM (Google Translate) ↗</a></div>`;
 }
 
 function tafsirCard(t, i) {
@@ -38,6 +48,7 @@ function tafsirCard(t, i) {
     <header><h2>${esc(TAFSIR_NAMES[t.source] ?? t.source)}</h2>
       <div class="attr" dir="${rtl ? "rtl" : "ltr"}">${esc(t.attribution)}</div></header>
     <div class="body">${partHtml(t.parts[0], rtl)}</div>
+    ${t.parts.some((p) => p.ms) ? `<div class="ai-note">Terjemahan AI (Claude) — mungkin ada kesilapan; rujuk teks asal.</div>` : ""}
     ${total > 1 ? `<button class="more" type="button">Baca seterusnya (1/${total})</button>` : ""}
   </section>`;
 }

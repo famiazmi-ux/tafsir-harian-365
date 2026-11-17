@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-17-petang",
+  "date": "2026-11-17",
+  "slot": "petang",
+  "key": "20:116",
+  "surahName": "Taha",
+  "seq": 2
+ },
+ {
   "id": "2026-11-17-pagi",
   "date": "2026-11-17",
   "slot": "pagi",

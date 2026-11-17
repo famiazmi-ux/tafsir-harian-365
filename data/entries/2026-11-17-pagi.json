@@ -16,7 +16,8 @@
    "parts": [
     {
      "text": "“I do not seek any reward from you for what I convey to you from my Lord. My reward is only from Allah: the Lord of all creation, not from anyone else.”",
-     "footnotes": []
+     "footnotes": [],
+     "ms": "“Aku tidak meminta sebarang upah daripada kamu atas apa yang aku sampaikan kepada kamu daripada Tuhanku. Upahku hanyalah daripada Allah: Tuhan sekalian alam, bukan daripada sesiapa pun yang lain.”"
     }
    ]
   },
@@ -26,7 +27,8 @@
    "parts": [
     {
      "text": "{فَاتَّقُوا اللَّهَ وَأَطِيعُونِ (108) وَمَا أَسْأَلُكُمْ عَلَيْهِ مِنْ أَجْرٍ} الآية؛ أي: لا أطلب منكم جزاء على نصحي لكم، بل أدّخر ثواب ذلك عند الله",
-     "footnotes": []
+     "footnotes": [],
+     "ms": "{فَاتَّقُوا اللَّهَ وَأَطِيعُونِ (108) وَمَا أَسْأَلُكُمْ عَلَيْهِ مِنْ أَجْرٍ} (Maka bertakwalah kamu kepada Allah dan taatlah kepadaku (108) Dan aku tidak meminta kepada kamu sebarang upah atas seruan itu) ayat; iaitu: Aku tidak menuntut daripada kamu sebarang balasan atas nasihatku kepada kamu, bahkan aku menyimpan pahala itu di sisi Allah."
     }
    ]
   },
@@ -36,7 +38,8 @@
    "parts": [
     {
      "text": "يقولُ تعالى ذكرُه: فاتقُوا عِقَابَ اللَّهِ أَيُّها القومُ على كفرِكم به، وأطيعوني في نصيحتي لكم، وأمرى إياكم باتِّقائِه، {وَمَا أَسْأَلُكُمْ عَلَيْهِ مِنْ أَجْرٍ}. يقولُ: وما أطلب منكم على نصيحتي لكم وأمرى إياكم باتِّقاءِ عقابِ اللهِ، بطاعتِه فيما أمرَكم ونهاكم - مِن ثوابٍ ولا جزاءٍ، {إِنْ أَجْرِيَ إِلَّا عَلَى رَبِّ الْعَالَمِينَ} دونَكم ودونَ جميعِ خلقِ اللهِ.",
-     "footnotes": []
+     "footnotes": [],
+     "ms": "Allah Taala berfirman: Maka bertakwalah kamu kepada seksaan Allah, wahai kaum, atas kekufuran kamu terhadap-Nya, dan taatilah aku dalam nasihatku kepada kamu serta perintahku kepada kamu supaya bertakwa kepada-Nya, {وَمَا أَسْأَلُكُمْ عَلَيْهِ مِنْ أَجْرٍ} (Dan aku tidak meminta kepada kamu sebarang upah atasnya). Maksudnya: Aku tidak menuntut daripada kamu, atas nasihatku kepada kamu dan perintahku kepada kamu supaya bertakwa kepada seksaan Allah dengan mentaati-Nya dalam apa yang Dia perintahkan dan larang kamu, apa-apa pahala mahupun balasan, {إِنْ أَجْرِيَ إِلَّا عَلَى رَبِّ الْعَالَمِينَ} (Upahku hanyalah ditanggung oleh Tuhan semesta alam), bukan oleh kamu dan bukan oleh seluruh makhluk Allah."
     }
    ]
   }
@@ -45,5 +48,6 @@
  "id": "2026-11-17-pagi",
  "date": "2026-11-17",
  "slot": "pagi",
- "seq": 1
+ "seq": 1,
+ "msSource": "Terjemahan AI (Claude) — mungkin ada kesilapan; rujuk teks asal."
 }

@@ -1,0 +1,111 @@
+:root {
+  --bg: #f6f1e7;
+  --card: #fffdf8;
+  --ink: #23201a;
+  --muted: #7a7266;
+  --line: #e6dccb;
+  --accent: #1f6b52;
+  --accent-soft: #e3efe8;
+  --gold: #a97b2c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14130f;
+    --card: #1d1b16;
+    --ink: #ece6d8;
+    --muted: #9a917f;
+    --line: #2f2b23;
+    --accent: #6cc3a0;
+    --accent-soft: #1f2e27;
+    --gold: #d6aa5c;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.6 Inter, system-ui, sans-serif;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+a { color: var(--accent); }
+.top {
+  position: sticky; top: 0; z-index: 5;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: calc(10px + env(safe-area-inset-top)) 16px 10px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.brand { font-weight: 600; text-decoration: none; color: var(--ink); }
+.brand span { color: var(--gold); }
+nav { display: flex; gap: 4px; }
+nav a {
+  text-decoration: none; color: var(--muted); font-size: 14px; font-weight: 500;
+  padding: 6px 12px; border-radius: 999px;
+}
+nav a.active { background: var(--accent-soft); color: var(--accent); }
+main { max-width: 720px; margin: 0 auto; padding: 16px; }
+.muted { color: var(--muted); }
+.center { text-align: center; }
+
+.meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px; color: var(--muted); margin: 4px 0 12px; }
+.pill { background: var(--accent-soft); color: var(--accent); padding: 2px 10px; border-radius: 999px; font-weight: 600; }
+
+.ayah-card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+  padding: 22px 18px; margin-bottom: 18px;
+}
+.surah { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+.surah h1 { font-size: 20px; margin: 0; line-height: 1.3; }
+.surah h1 small { display: block; font-size: 13px; font-weight: 400; color: var(--muted); }
+.surah .ar-name { font-family: Amiri, serif; font-size: 24px; color: var(--gold); }
+.ayah-ar {
+  font-family: "Amiri Quran", Amiri, serif; font-size: 30px; line-height: 2.2;
+  direction: rtl; text-align: right; margin: 0 0 16px;
+}
+.ayah-no { font-family: Amiri, serif; color: var(--gold); white-space: nowrap; }
+.ayah-ms { margin: 0; font-size: 16px; }
+.src { font-size: 12px; color: var(--muted); margin-top: 10px; }
+.share {
+  display: block; width: 100%; margin-top: 16px; border: 0; border-radius: 12px;
+  background: #1fa855; color: #fff; font: 600 15px Inter, sans-serif; padding: 12px; cursor: pointer;
+}
+.share:disabled { opacity: .6; }
+
+.tafsir {
+  background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+  margin-bottom: 14px; overflow: hidden;
+}
+.tafsir header { padding: 14px 18px 10px; border-bottom: 1px solid var(--line); }
+.tafsir h2 { margin: 0; font-size: 16px; }
+.tafsir .attr { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.tafsir .attr[dir="rtl"] { font-family: Amiri, serif; font-size: 14px; }
+.tafsir .body { padding: 14px 18px; }
+.tafsir .part { white-space: pre-line; margin: 0 0 12px; }
+.tafsir .part[dir="rtl"] { font-family: Amiri, serif; font-size: 20px; line-height: 2; text-align: right; }
+.tafsir .part + .part { border-top: 1px dashed var(--line); padding-top: 12px; }
+details.notes { font-size: 13px; color: var(--muted); margin: -4px 0 12px; }
+details.notes summary { cursor: pointer; }
+details.notes ol { padding-inline-start: 20px; margin: 6px 0 0; }
+details.notes[dir="rtl"] { font-family: Amiri, serif; font-size: 16px; }
+.more {
+  display: block; width: 100%; border: 0; border-top: 1px solid var(--line);
+  background: transparent; color: var(--accent); font: 600 14px Inter, sans-serif;
+  padding: 12px; cursor: pointer;
+}
+.more:active { background: var(--accent-soft); }
+
+.footer-src { font-size: 12px; color: var(--muted); text-align: center; margin: 18px 0 8px; }
+
+.archive { list-style: none; padding: 0; margin: 0; }
+.archive h3 { font-size: 13px; color: var(--muted); font-weight: 600; margin: 18px 0 6px; text-transform: uppercase; letter-spacing: .04em; }
+.archive a {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 12px 14px; margin-bottom: 8px; text-decoration: none; color: var(--ink);
+}
+.archive a span:last-child { color: var(--muted); font-size: 13px; }
+.slot-badge { font-size: 12px; color: var(--gold); font-weight: 600; margin-right: 6px; }
+.empty { padding: 40px 0; }

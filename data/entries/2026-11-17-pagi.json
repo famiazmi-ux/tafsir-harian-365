@@ -1,0 +1,49 @@
+{
+ "key": "26:109",
+ "surah": 26,
+ "ayah": 109,
+ "surahName": "Ash-Shu'ara",
+ "surahAr": "الشعراء",
+ "surahMs": "Para Penyair\n",
+ "ayahText": "وَمَآ أَسْـَٔلُكُمْ عَلَيْهِ مِنْ أَجْرٍ ۖ إِنْ أَجْرِىَ إِلَّا عَلَىٰ رَبِّ ٱلْعَـٰلَمِينَ",
+ "translation": "\"Dan aku tidak meminta kepada kamu sebarang upah mengenai apa yang aku sampaikan (dari Tuhanku); balasanku hanyalah terserah kepada Allah Tuhan sekalian alam.",
+ "translationSource": "Terjemahan Abdullah Muhammad Basmeih (melalui Quran.com)",
+ "juz": 19,
+ "tafsirs": [
+  {
+   "source": "mukhtasar_en",
+   "attribution": "Concise Quran Commentary (English)",
+   "parts": [
+    {
+     "text": "“I do not seek any reward from you for what I convey to you from my Lord. My reward is only from Allah: the Lord of all creation, not from anyone else.”",
+     "footnotes": []
+    }
+   ]
+  },
+  {
+   "source": "katheer",
+   "attribution": "تفسير ابن كثير، أبو الفداء إسماعيل بن كثير (ت. 774هـ)",
+   "parts": [
+    {
+     "text": "{فَاتَّقُوا اللَّهَ وَأَطِيعُونِ (108) وَمَا أَسْأَلُكُمْ عَلَيْهِ مِنْ أَجْرٍ} الآية؛ أي: لا أطلب منكم جزاء على نصحي لكم، بل أدّخر ثواب ذلك عند الله",
+     "footnotes": []
+    }
+   ]
+  },
+  {
+   "source": "tabary",
+   "attribution": "تفسير الإمام الطبري (جامع البيان)، أبو جعفر الطبري (ت. 310هـ)",
+   "parts": [
+    {
+     "text": "يقولُ تعالى ذكرُه: فاتقُوا عِقَابَ اللَّهِ أَيُّها القومُ على كفرِكم به، وأطيعوني في نصيحتي لكم، وأمرى إياكم باتِّقائِه، {وَمَا أَسْأَلُكُمْ عَلَيْهِ مِنْ أَجْرٍ}. يقولُ: وما أطلب منكم على نصيحتي لكم وأمرى إياكم باتِّقاءِ عقابِ اللهِ، بطاعتِه فيما أمرَكم ونهاكم - مِن ثوابٍ ولا جزاءٍ، {إِنْ أَجْرِيَ إِلَّا عَلَى رَبِّ الْعَالَمِينَ} دونَكم ودونَ جميعِ خلقِ اللهِ.",
+     "footnotes": []
+    }
+   ]
+  }
+ ],
+ "tafsirSource": "Tafsir MCP — Markaz Tafsir li al-Dirasat al-Qur'aniyyah (mcp.tafsir.net)",
+ "id": "2026-11-17-pagi",
+ "date": "2026-11-17",
+ "slot": "pagi",
+ "seq": 1
+}

@@ -1,0 +1,40 @@
+name: Tafsir Harian
+
+on:
+  schedule:
+    - cron: "0 22 * * *" # 06:00 pagi MYT (UTC+8)
+    - cron: "0 10 * * *" # 06:00 petang MYT
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: "pagi atau petang (kosong = ikut waktu sekarang)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tafsir-harian
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Tarik ayat dan tafsir
+        run: |
+          SLOT="${{ github.event.inputs.slot }}"
+          if [ "${{ github.event.schedule }}" = "0 22 * * *" ]; then SLOT=pagi; fi
+          if [ "${{ github.event.schedule }}" = "0 10 * * *" ]; then SLOT=petang; fi
+          node scripts/fetch-ayah.mjs ${SLOT:+--slot $SLOT}
+      - name: Simpan ke repo
+        run: |
+          git config user.name "tafsir-harian-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || (git commit -m "Tafsir $(TZ=Asia/Kuala_Lumpur date '+%F %H:%M')" && git push)

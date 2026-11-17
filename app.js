@@ -75,6 +75,13 @@ function renderEntry(e) {
 }
 
 // ---- Kongsi ke Status WhatsApp: jana gambar 1080x1920 dan buka menu kongsi telefon ----
+const PASTEL_THEMES = [
+  { name: "pic", bg: ["#fde2e4", "#e2d4f0"], ink: "#4a3550", soft: "#6b5470", accent: "#b5658a" },   // merah jambu → lavender
+  { name: "mint", bg: ["#d8f3e8", "#cfe8f6"], ink: "#24493f", soft: "#3f6459", accent: "#3f8f78" },  // pudina → biru langit
+  { name: "peach", bg: ["#ffe5d0", "#fff3c4"], ink: "#5a3b26", soft: "#7a5a43", accent: "#c27a4a" }, // pic → kuning lembut
+  { name: "lilac", bg: ["#e6e0f8", "#d6eaf8"], ink: "#352f57", soft: "#544d78", accent: "#7a6cc0" }, // lilac → biru
+  { name: "sage", bg: ["#e8efd9", "#f6e7d8"], ink: "#3d4630", soft: "#5c654c", accent: "#7f8f52" },  // sage → krim
+];
 function wrapLines(ctx, text, maxWidth) {
   const words = text.split(/\s+/).filter(Boolean);
   const lines = [];
@@ -111,53 +118,68 @@ async function makeStatusImage(e) {
   c.width = W; c.height = H;
   const ctx = c.getContext("2d");
 
-  const g = ctx.createLinearGradient(0, 0, 0, H);
-  g.addColorStop(0, "#123f31"); g.addColorStop(1, "#0b241c");
+  // Tema pastel bergilir ikut nombor ayat, supaya setiap status nampak berbeza.
+  const T = PASTEL_THEMES[(e.seq ?? e.ayah) % PASTEL_THEMES.length];
+  const g = ctx.createLinearGradient(0, 0, W, H);
+  g.addColorStop(0, T.bg[0]); g.addColorStop(1, T.bg[1]);
   ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-  ctx.strokeStyle = "rgba(214,170,92,.45)"; ctx.lineWidth = 3;
-  ctx.strokeRect(48, 48, W - 96, H - 96);
+  // Bulatan lembut sebagai hiasan
+  ctx.fillStyle = "rgba(255,255,255,.35)";
+  ctx.beginPath(); ctx.arc(W - 120, 160, 220, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.arc(110, H - 170, 180, 0, Math.PI * 2); ctx.fill();
+  // Kad putih lut sinar
+  ctx.fillStyle = "rgba(255,255,255,.55)";
+  ctx.beginPath(); ctx.roundRect(56, 110, W - 112, H - 220, 48); ctx.fill();
+  ctx.strokeStyle = T.accent + "66"; ctx.lineWidth = 3; ctx.stroke();
   ctx.textAlign = "center";
 
-  ctx.fillStyle = "#d6aa5c";
+  ctx.fillStyle = T.accent;
   ctx.font = "600 34px Inter";
   ctx.fillText("TAFSIR HARIAN 365", W / 2, 190);
   ctx.font = "64px Amiri";
   ctx.fillText(e.surahAr, W / 2, 290);
 
-  // Ayat (Arab, RTL)
+  // Ukur dulu ayat (Arab) dan terjemahan, kemudian letak di tengah ruang antara tajuk dan kaki.
+  const TOP = 350, BOTTOM = H - 270, GAP = 110; // GAP = ruang pemisah antara ayat & terjemahan
   ctx.direction = "rtl";
-  ctx.fillStyle = "#f6efe0";
   const ar = fitText(ctx, `${e.ayahText} ﴿${toArabicDigits(e.ayah)}﴾`, (s) => `${s}px "Amiri Quran"`, 72, 36, 1.9, maxW, 760);
-  const arLH = ar.size * 1.9;
-  let y = 400 + arLH * 0.7;
-  ctx.font = `${ar.size}px "Amiri Quran"`;
-  for (const l of ar.lines) { ctx.fillText(l, W / 2, y); y += arLH; }
   ctx.direction = "ltr";
+  const arLH = ar.size * 1.9;
+  const arH = ar.lines.length * arLH;
 
-  // Pemisah
-  y += 20;
-  ctx.fillStyle = "#d6aa5c";
-  ctx.fillRect(W / 2 - 60, y, 120, 3);
-  y += 70;
-
-  // Terjemahan BM
-  ctx.fillStyle = "#e4dccb";
-  const msMaxH = H - y - 300;
+  const msMaxH = BOTTOM - TOP - arH - GAP;
   const ms = fitText(ctx, e.translation, (s) => `${s}px Inter`, 42, 24, 1.5, maxW, msMaxH);
   const msLH = ms.size * 1.5;
-  const maxLines = Math.floor(msMaxH / msLH);
+  const maxLines = Math.max(1, Math.floor(msMaxH / msLH));
   if (ms.lines.length > maxLines) {
     ms.lines = ms.lines.slice(0, maxLines);
     ms.lines[maxLines - 1] = ms.lines[maxLines - 1].replace(/\s+\S*$/, "") + " …";
   }
-  ctx.font = `${ms.size}px Inter`;
-  y += ms.size;
-  for (const l of ms.lines) { ctx.fillText(l, W / 2, y); y += msLH; }
+  const msH = ms.lines.length * msLH;
 
-  ctx.fillStyle = "#d6aa5c";
+  let y = TOP + Math.max(0, (BOTTOM - TOP - (arH + GAP + msH)) / 2);
+
+  // Ayat (Arab, RTL)
+  ctx.direction = "rtl";
+  ctx.fillStyle = T.ink;
+  ctx.font = `${ar.size}px "Amiri Quran"`;
+  for (const l of ar.lines) { ctx.fillText(l, W / 2, y + arLH * 0.7); y += arLH; }
+  ctx.direction = "ltr";
+
+  // Pemisah
+  ctx.fillStyle = T.accent;
+  ctx.fillRect(W / 2 - 60, y + GAP / 2 - 2, 120, 3);
+  y += GAP;
+
+  // Terjemahan BM
+  ctx.fillStyle = T.soft;
+  ctx.font = `${ms.size}px Inter`;
+  for (const l of ms.lines) { ctx.fillText(l, W / 2, y + ms.size); y += msLH; }
+
+  ctx.fillStyle = T.accent;
   ctx.font = "600 40px Inter";
   ctx.fillText(`${e.surahName} ${e.surah}:${e.ayah}`, W / 2, H - 190);
-  ctx.fillStyle = "rgba(228,220,203,.6)";
+  ctx.fillStyle = T.soft + "aa";
   ctx.font = "26px Inter";
   ctx.fillText("Terjemahan: Abdullah Muhammad Basmeih", W / 2, H - 135);
 

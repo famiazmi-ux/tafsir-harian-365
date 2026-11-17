@@ -1,5 +1,5 @@
 // Shell dicache untuk offline; data sentiasa cuba dari rangkaian dulu.
-const CACHE = "tafsir365-v1";
+const CACHE = "tafsir365-v2";
 const SHELL = ["./", "index.html", "style.css", "app.js", "manifest.webmanifest", "icon.svg", "icon-192.png", "icon-512.png"];
 
 self.addEventListener("install", (e) => {

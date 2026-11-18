@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-18-pagi",
+  "date": "2026-11-18",
+  "slot": "pagi",
+  "key": "21:80",
+  "surahName": "Al-Anbya",
+  "seq": 4
+ },
+ {
   "id": "2026-11-18-petang",
   "date": "2026-11-18",
   "slot": "petang",

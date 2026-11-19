@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-20-petang",
+  "date": "2026-11-20",
+  "slot": "petang",
+  "key": "5:3",
+  "surahName": "Al-Ma'idah",
+  "seq": 7
+ },
+ {
   "id": "2026-11-19-pagi",
   "date": "2026-11-19",
   "slot": "pagi",

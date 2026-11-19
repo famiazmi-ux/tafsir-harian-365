@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-19-pagi",
+  "date": "2026-11-19",
+  "slot": "pagi",
+  "key": "51:18",
+  "surahName": "Adh-Dhariyat",
+  "seq": 6
+ },
+ {
   "id": "2026-11-19-petang",
   "date": "2026-11-19",
   "slot": "petang",

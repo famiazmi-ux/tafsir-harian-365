@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-21-petang",
+  "date": "2026-11-21",
+  "slot": "petang",
+  "key": "24:45",
+  "surahName": "An-Nur",
+  "seq": 9
+ },
+ {
   "id": "2026-11-20-pagi",
   "date": "2026-11-20",
   "slot": "pagi",

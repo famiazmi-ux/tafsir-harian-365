@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-23-petang",
+  "date": "2026-11-23",
+  "slot": "petang",
+  "key": "95:8",
+  "surahName": "At-Tin",
+  "seq": 13
+ },
+ {
   "id": "2026-11-22-pagi",
   "date": "2026-11-22",
   "slot": "pagi",

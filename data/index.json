@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-22-pagi",
+  "date": "2026-11-22",
+  "slot": "pagi",
+  "key": "19:58",
+  "surahName": "Maryam",
+  "seq": 12
+ },
+ {
   "id": "2026-11-22-petang",
   "date": "2026-11-22",
   "slot": "petang",

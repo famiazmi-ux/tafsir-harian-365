@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-24-petang",
+  "date": "2026-11-24",
+  "slot": "petang",
+  "key": "32:24",
+  "surahName": "As-Sajdah",
+  "seq": 15
+ },
+ {
   "id": "2026-11-23-pagi",
   "date": "2026-11-23",
   "slot": "pagi",

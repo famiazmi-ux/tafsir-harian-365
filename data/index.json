@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-24-pagi",
+  "date": "2026-11-24",
+  "slot": "pagi",
+  "key": "2:252",
+  "surahName": "Al-Baqarah",
+  "seq": 16
+ },
+ {
   "id": "2026-11-24-petang",
   "date": "2026-11-24",
   "slot": "petang",

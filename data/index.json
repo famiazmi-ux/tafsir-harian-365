@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-25-petang",
+  "date": "2026-11-25",
+  "slot": "petang",
+  "key": "54:16",
+  "surahName": "Al-Qamar",
+  "seq": 17
+ },
+ {
   "id": "2026-11-24-pagi",
   "date": "2026-11-24",
   "slot": "pagi",

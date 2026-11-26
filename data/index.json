@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-26-pagi",
+  "date": "2026-11-26",
+  "slot": "pagi",
+  "key": "33:12",
+  "surahName": "Al-Ahzab",
+  "seq": 20
+ },
+ {
   "id": "2026-11-26-petang",
   "date": "2026-11-26",
   "slot": "petang",

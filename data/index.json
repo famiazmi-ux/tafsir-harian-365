@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-28-pagi",
+  "date": "2026-11-28",
+  "slot": "pagi",
+  "key": "72:3",
+  "surahName": "Al-Jinn",
+  "seq": 24
+ },
+ {
   "id": "2026-11-28-petang",
   "date": "2026-11-28",
   "slot": "petang",

@@ -1,5 +1,13 @@
 [
  {
+  "id": "2026-11-29-petang",
+  "date": "2026-11-29",
+  "slot": "petang",
+  "key": "88:21",
+  "surahName": "Al-Ghashiyah",
+  "seq": 25
+ },
+ {
   "id": "2026-11-28-pagi",
   "date": "2026-11-28",
   "slot": "pagi",
